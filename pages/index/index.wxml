@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view>
+  <top-group-list></top-group-list>
+  <footer></footer>
+</view>

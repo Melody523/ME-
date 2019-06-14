@@ -1,0 +1,79 @@
+.rank-container{
+    .rank-header{
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 80rpx;
+        width: 100%;
+        z-index: 22;
+        line-height: 80rpx;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        font-size: 16px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .rank-body{
+        margin-top: 80rpx;
+        .rank-item{
+            height: 260rpx;
+            width: 90%;
+            padding: 20rpx 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            margin: 0 5%;
+            .rank-img{
+                position: relative;
+                width: 224rpx;
+                background: url(https://static.missevan.com/assets/m/images/build/album-cover.efe70663.png) no-repeat;
+                background-size: contain;
+                image {
+                    border-radius: 8rpx;
+                    width: 200rpx;
+                    height: 200rpx;
+                }
+                .count{
+                    width: 200rpx;
+                    background: linear-gradient(180deg,transparent,rgba(0,0,0,.26));
+                    text-shadow: 0.5px 0 1px #000;
+                    position: absolute;
+                    bottom: 12rpx;
+                    right: 24rpx;
+                    display: flex;
+                    font-size: 12px;
+                    color: #fff;
+                    display: flex;
+                    justify-content: flex-end;
+                    .count-icon{
+                        margin: 8rpx 0 6rpx;
+                        height: 22rpx;
+                        width: 26rpx;
+                        background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-thumbnails@2x.c71cb7b7.png);
+                        background-position: 0 -88rpx;
+                        background-size: 112rpx 110rpx;
+                    }
+                    .count-num{
+                        margin-right: 10rpx;
+                    }
+                }
+            }
+            .rank-info{
+                height: 100%;
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .rank-desc{
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    font-size: 13px;
+                    color: #9e9e9e;
+                    height: 32rpx;
+                }
+            }
+        }
+    }
+}

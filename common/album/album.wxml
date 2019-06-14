@@ -1,0 +1,49 @@
+<!--common/album/album.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="album-container">
+    <view class="album-header">
+        <view class="album-img">
+            <image src="{{albumList.album.front_cover}}" />
+        </view>
+        <view class="album-info">
+            <view class="album-title">
+                {{albumList.album.title}}
+            </view>
+            <view class="album-owner">
+                <image src="{{albumList.owner.avatar2}}" />
+                <view class="album-owner-name">
+                    {{albumList.owner.username}}
+                </view>
+            </view>
+        </view>
+        <view class="album-blur" style="background-image: url({{albumList.album.front_cover}})">
+        </view>
+    </view>
+    <view class="album-list">
+    <block wx:for="{{albumList.sounds}}" wx:key="{{item.id}}">
+        <view class="album-item" bindtap="toSoundPage" data-id="{{item.id}}">
+            <view class="album-item-img">
+                <image src="{{item.front_cover}}" />
+            </view>
+            <view class="album-item-info">
+                <view class="album-item-title">
+                    {{item.soundstr}}
+                </view>
+                <view class="album-item-detail">
+                    <view class="play-times">
+                        <view class="play-icon">
+                        </view>
+                        {{item.view_count_formatted}}
+                    </view>
+                    <view class="duration">
+                        <view class="duration-icon">
+                        </view>
+                        {{filter.numToInt(item.duration/1000/60) + ':'+ filter.numToFix(item.duration/1000%60)}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        </block>
+    </view>
+    <footer></footer>
+</view>

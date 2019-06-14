@@ -1,0 +1,12 @@
+/* components/children/banner/banner.wxss */
+.banner{
+
+}
+swiper{
+    width: 750rpx;
+    height: 250rpx;
+}
+swiper-item image{
+    width: 100%;
+    height: 100%;
+}

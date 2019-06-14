@@ -1,0 +1,48 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/music-list/music-list",
+    "common/rank/rank",
+    "common/album/album",
+    "common/catalogs/catalogs",
+    "common/sound/sound",
+    "common/drama/drama",
+    "common/channel/channel"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "猫耳FM",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#9e9e9e",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/music-list/music-list",
+        "text": "音单",
+        "iconPath": "./images/icons/music.png",
+        "selectedIconPath": "./images/icons/music-selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "./images/icons/index.png",
+        "selectedIconPath": "./images/icons/index-selected.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "./images/icons/classify.png",
+        "selectedIconPath": "./images/icons/classify-selected.png"
+      }
+    ]
+  }
+}

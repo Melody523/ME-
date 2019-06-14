@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "catalog": "../../components/children/catalog/catalog",
+    "footer": "../../components/children/footer/footer"
+  }
+}

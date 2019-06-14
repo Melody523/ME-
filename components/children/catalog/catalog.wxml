@@ -1,0 +1,46 @@
+<!--components/children/catalog/catalog.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="catalog-container">
+    <view class="catalogs-list">
+        <view class="catalogs-title">
+            <view class="list-title">
+                <view class="title-icon">
+                </view>
+                {{catalogsList.catalog_name || '全部动态'}}
+            </view>
+            <view class="list-nav">
+                更多
+                <view class="nav-icon">
+                </view>
+            </view>
+        </view>
+        
+        <block wx:for="{{catalogsList.catalogsSonList||catalogsList}}" wx:key="{{item.id}}">
+            <view class="catalogs-item" bindtap="toSoundPage" data-id="{{item.id}}">
+                <view class="catalogs-item-img">
+                    <image src="{{item.front_cover}}" />
+                </view>
+                <view class="catalogs-item-info">
+                    <view class="catalogs-item-title">
+                        {{item.soundstr}}
+                    </view>
+                    <view class="catalogs-item-username">
+                        UP主:{{item.username}}
+                    </view>
+                    <view class="catalogs-item-detail">
+                        <view class="play-times">
+                            <view class="play-icon">
+                            </view>
+                            {{item.view_count}}
+                        </view>
+                        <view class="duration">
+                            <view class="duration-icon">
+                            </view>
+                            {{filter.numToInt(item.duration/1000/60) + ':'+ filter.numToFix(item.duration/1000%60)}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

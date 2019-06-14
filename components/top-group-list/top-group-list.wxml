@@ -1,0 +1,9 @@
+<!--components/top-group-list/top-group-list.wxml-->
+<view>
+    <banner-list banner="{{info.banner}}"></banner-list>
+    <content-box datas="{{info.sound}}" datasType='sound'></content-box>
+    <content-box datas="{{info.channel}}" datasType='channel'></content-box>
+    <block wx:for="{{datas}}" wx:key="item.id">
+        <content-box datas="{{item.objects_point}}" datasType="{{item.id}}"></content-box>
+    </block>
+</view>

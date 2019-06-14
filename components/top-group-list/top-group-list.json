@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "banner-list": "../../components/children/banner/banner",
+    "content-box": "../../components/children/content-box/content-box"
+  }
+}

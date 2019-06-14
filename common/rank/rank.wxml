@@ -1,0 +1,30 @@
+<!--common/rank/rank.wxml-->
+<view class="rank-container">
+    <view class="rank-header">
+        排行榜
+    </view>
+    <view class="rank-body">
+        <block wx:for="{{rankList}}" wx:key="{{item.album.id}}">
+            <view class="rank-item" data-id="{{item.album.id}}" bindtap="toAlbumList">
+                <view class="rank-img">
+                    <image src="{{'https://static.missevan.com/coversmini/'+item.album.cover_image}}" />
+                    <view class="count">
+                        <view class="count-icon">
+                        </view>
+                        <view class="count-num">
+                        {{item.album.music_count}} 
+                        </view>
+                    </view>
+                </view>
+                <view class="rank-info">
+                <block wx:for="{{item.sounds}}" wx:for-item="music" wx:key="music.id">
+                    <view class="rank-desc">
+                        {{index+1}}  {{music.soundstr}}
+                    </view>
+                </block>
+                </view>
+            </view>
+        </block>
+    </view>
+    <footer></footer>
+</view>

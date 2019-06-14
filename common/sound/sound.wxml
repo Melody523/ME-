@@ -1,0 +1,182 @@
+<!--common/sound/sound.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="sound-container">
+    <view class="sound-header">
+        <image src="{{soundInfo.front_cover}}" wx:if="{{!play||soundInfo.videourl==''}}"/>
+        
+        <video autoplay="true" show-mute-btn="true" enable-play-gesture="true" id="myVideo" wx:if="{{play&&soundInfo.videourl!=''}}" src="{{soundInfo.videourl}}" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+        
+        <view class="play" wx:if="{{!play||soundInfo.videourl==''}}">
+            <view class="play-icon" bindtap="changePlay" data-url="{{soundInfo.soundurl_64}}">
+            </view>
+        </view>
+        
+        <!--<slider bindchange="changeValue" step="5" class="silder" backgroundColor="#d6d6d6" block-size="12" block-color="#fff"/>-->
+    </view>
+    <view class="btn-area" wx:if="{{play&&soundInfo.videourl!=''}}">
+            <input bindblur="bindInputBlur"/>
+            <view bindtap="bindSendDanmu">发送</view>
+        </view>
+    <view class="sound-control">
+        <block wx:for="{{controlList}}" wx:key="{{index}}">
+            <view class="control-item">
+                <view class="control-icon" style="{{'background-position:'+item.location.x+'rpx '+item.location.y+'rpx '}}">
+                    
+                </view>
+                {{item.title}}
+            </view>
+        </block>
+        <view class="open-app">
+            用客户端打开
+        </view>
+    </view>
+    <view class="sound-body">
+        <view class="divider">
+            <block wx:for="{{dividerList}}" wx:key="{{item.id}}">
+                <view class="divider-border" wx:if="{{item.id!=1}}">
+                    
+                </view>
+                <view class="divider-item">
+                    {{item.title}}{{item.id==2?'('+soundInfo.all_comments+')':''}}
+                </view>
+            </block>   
+        </view>
+        <view class="sound-content">
+            <view class="sound-info">
+                <view class="info-title">
+                    {{soundInfo.soundstr}}
+                </view>
+                <view class="info-status">
+                    <view class="play-times">
+                        <view class="play-icon">   
+                        </view>
+                       {{soundInfo.view_count}}
+                    </view>
+                    <view class="comment">
+                        <view class="comment-icon">
+                        </view>
+                        {{soundInfo.all_comments}}
+                    </view>
+                    <view>
+                        音频ID:{{soundInfo.id}}
+                    </view>
+                </view>
+                <view class="intro">
+                    <view>
+                        简介：
+                    </view>
+                    <view>
+                        本漫画由爱奇艺漫画@爱奇艺漫画频道 与六十一分漫画工作室出品，群音说工作室@群音说动漫配音 制作，每周五更新！
+                    </view>
+                </view>
+                <view class="more">
+                </view>
+            </view>
+        </view>
+        <view class="drama" wx:if="{{hasdramaInfo}}">
+            <view class="drama-left">
+                <image src="{{dramaInfo.cover}}" />
+            </view>
+            <view class="drama-center">
+                <view class="title">
+                    {{dramaInfo.name}}
+                </view>
+                <view class="type">
+                    {{dramaInfo.catalog_name}} 类型:{{dramaInfo.type_name}}
+                </view>
+                <view class="update">
+                    更新至 {{dramaInfo.newest}}
+                </view>
+            </view>
+            <view class="drama-right">
+                <view class="follow-icon">   
+                </view>
+                追剧
+            </view>
+        </view>
+        <view class="sound-cv" wx:if="{{hascvInfo}}">
+            <view class="cv-title">
+                参演CV
+            </view>
+            <view class="cv-list">
+                <block wx:for="{{cvInfo}}" wx:key="{{item.id}}">
+                    <view class="cv-item" wx:if="{{index<showNum}}">
+                        <image src="{{item.cvinfo.icon}}" />
+                        <view class="username">
+                            {{item.cvinfo.name}}
+                        </view>
+                        <view class="character">
+                            饰:{{item.character}}
+                        </view>
+                        <view class="group">
+                           {{item.cvinfo.group}}
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="{{isShow?'more show':'more'}}" bindtap="changeShowNum" wx:if="{{cvInfo.length>4}}">
+            </view>
+        </view>
+        <view class="sound-user">
+            <view class="user-left">
+                <image src="{{userInfo.icon}}" />
+            </view>
+            <view class="user-center">
+                <view class="name">
+                    {{userInfo.username}}
+                </view>
+                <view class="publish">
+                    发布于: {{filter.numToDate(soundInfo.create_time)}}
+                </view>
+            </view>
+            <view class="user-right">
+                关注
+            </view>
+        </view>
+        <view class="sound-related">
+            <view class="sound-dramas" wx:if="{{hasdramasList}}">
+                <view class="sound-dramas-title">
+                    剧集推荐
+                </view>
+                <view class="dramas-list">
+                    <block wx:for="{{dramasList}}" wx:key="{{item.id}}">
+                        <view class="dramas-item" bindtap="toDramaPage" data-id="{{item.id}}">
+                            <image src="{{item.front_cover}}" />
+                            <view class="dramas-title">
+                               {{item.name}}
+                            </view>
+                        </view>
+                    </block> 
+                </view>
+            </view>
+            <view class="sound-sounds">
+                <view class="sound-sounds-title">
+                    相似音频
+                </view>
+                <view class="sounds-list">
+                    <block wx:for="{{soundsList}}" wx:key="{{item.id}}">
+                        <view class="sounds-item" bindtap="toSoundPage" data-id="{{item.id}}">
+                            <image src="{{item.front_cover}}" />
+                            <view class="sounds-title">
+                                {{item.soundstr}}
+                            </view>
+                            <view class="count">
+                                <view class="play-times">
+                                    <view class="play-icon">   
+                                    </view>
+                                    {{item.view_count}}
+                                </view>
+                                <view class="comment">
+                                    <view class="comment-icon">
+                                    </view>
+                                    {{item.all_comments}}
+                                </view>
+                            </view>
+                        </view>
+                    </block> 
+                </view>
+            </view>
+        </view>
+    </view>
+    <footer></footer>
+</view>

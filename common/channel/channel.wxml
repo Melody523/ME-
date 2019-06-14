@@ -1,0 +1,34 @@
+<!--common/channel/channel.wxml-->
+<view class="channel-container">
+    <view class="channel-header">
+        频道
+    </view>
+    <view class="channel-nav">
+        <block wx:for="{{navList}}" wx:key="{{item.id}}">
+            <view bindtap="changeType" data-id="{{item.id}}" class="{{item.id===chooseId?'active nav-item':'nav-item'}}">
+                {{item.title}}
+            </view>
+        </block>
+    </view>
+    <view class="channel-body">
+        <block wx:for="{{channelList}}" wx:key="{{item.id}}">
+            <view class="channel-item">
+                <view class="channel-img">
+                    <image src="{{item.smallpic}}" />
+                    <view class="view-count">
+                        <view class="view-icon">
+                        </view>
+                            {{item.follow_num}}
+                    </view>
+                </view>
+                <view class="channel-title">
+                    {{item.name}}
+                </view>
+            </view>
+        </block>
+        <view class="loadmore">
+            更多
+        </view>
+    </view>
+    <footer></footer>
+</view>

@@ -1,0 +1,26 @@
+var filter = {
+  numberToFix: function (value) {
+    return value.toFixed(1)
+  },
+  numToFix: function (value) {
+    return value.toFixed(0)
+  },
+  numToInt: function (value) {
+    return parseInt(value)
+  },
+  numToDate: function(value) {
+    var date = getDate(parseInt(value)*1000);
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var day = date.getDate();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    return year + '/' + month + '/' + day + ' '+ h + ':' + m
+  }
+}
+module.exports = {
+  numberToFix: filter.numberToFix,
+  numToFix: filter.numToFix,
+  numToInt: filter.numToInt,
+  numToDate: filter.numToDate
+}

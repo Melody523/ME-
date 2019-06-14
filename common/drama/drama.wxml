@@ -1,0 +1,66 @@
+<!--common/drama/drama.wxml-->
+<view class="drama-container">
+    <view class="drama-header" style="background-image: url({{'https://static.missevan.com/dramacoversmini/'+dramaInfo.cover}})">   
+    </view>
+    <view class="drama-img">
+        <image src="{{'https://static.missevan.com/dramacoversmini/'+dramaInfo.cover}}" />
+        <view class="count">
+            <view class="count-icon">
+            </view>
+            {{dramaInfo.view_count}}
+        </view>
+    </view>
+    <view class="drama-info">
+         <view>
+             原创 原作者：{{dramaInfo.author}}
+         </view>
+         <view>
+             类型：{{dramaInfo.type}}
+         </view>
+         <view>
+             {{dramaInfo.serialize?'更新中':'已完结'}}
+         </view>
+    </view>
+    <view class="drama-episode">
+        <view class="episode-title">
+            <view class="title-left">
+                <view class="title-icon">
+                    
+                </view>
+                选集
+            </view>
+           <view class="title-right">
+                全部
+                <view class="nav-icon">
+                    
+                </view>
+            </view>
+        </view>
+        <scroll-view class="episode-list" scroll-x="true" style="white-space: nowrap; width: 100%;">
+            <block wx:for="{{episodeList}}" wx:key="{{item.id}}">
+                <view class="episode-item">
+                    {{item.name}}
+                </view>
+            </block>
+        </scroll-view>
+        <view class="episode-title">
+            <view class="title-left">
+                <view class="title-icon">
+                    
+                </view>
+                简介
+            </view>
+        </view>
+        <view class="intro">
+            中文有声漫画《空心恋人》
+        </view>
+    </view>
+    <view class="drama-type">
+        <block wx:for="{{dramaInfo.tags}}" wx:key="{{item.id}}">
+            <view class="type-item">
+                {{item.name}}
+            </view>
+        </block>
+    </view>
+    <footer></footer>
+</view>

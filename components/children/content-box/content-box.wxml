@@ -1,0 +1,55 @@
+<!--components/children/content-box/content-box.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="panel">
+    <view class="panel-header">
+        <view class="panel-title">
+            <view class="title-icon" style="background-position: {{panelType[datasType].location.x}}rpx {{panelType[datasType].location.y}}rpx;">
+            </view>
+            {{panelType[datasType].title}}
+        </view>
+        <!--
+        <navigator class="panel-nav" url="{{panelType[datasType].link+'?id='+datasType}}" >
+             {{panelType[datasType].nav}}
+            <view class="nav-icon">
+            </view>
+        </navigator>
+        -->
+        <view class="panel-nav" bindtap="toCatalogsPage" data-id="{{datasType}}" data-type="{{panelType[datasType].title}}">
+             {{panelType[datasType].nav}}
+            <view class="nav-icon">
+            </view>
+        </view>
+    </view>
+    <view class="panel-body" wx:if="{{panelType[datasType].type==='common'}}">
+        <block wx:for="{{datas}}" wx:key="{{item.id}}">
+            <view class="panel-item" wx:if="{{index<3}}" bindtap="toSoundPage" data-id="{{item.id}}">
+                <image src="{{item.front_cover||'http://static.missevan.com/coversmini/'+item.cover_image}}" />
+                <view class="item-title">
+                    {{item.soundstr}}
+                </view>
+                <view class="detail">
+                    <view class="play-times">
+                        <view class="play-times-icon">
+                        </view>
+                        {{item.view_count_formatted||(item.view_count>=10000?filter.numberToFix(item.view_count/10000)+'w' : item.view_count)}}
+                    </view>
+                    <view class="comment">
+                        <view class="comment-icon">
+                        </view>
+                        {{(item.comment_count>=10000?filter.numberToFix(item.comment_count/10000)+'w' : item.comment_count)}}
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="panel-body" wx:if="{{panelType[datasType].type==='special'}}">
+        <block wx:for="{{datas}}" wx:key="{{item.id}}">
+            <view class="channel-item" wx:if="{{index<4}}" >
+                <image src="{{item.smallpic}}" />
+                <view class="name">
+                    {{item.name}}
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/music-list/music-list.wxml-->
+<view class="music-container">
+    <view class="music-header">
+        <view class="title">
+            <view class="title-icon">
+            </view>
+            <view class="name">
+                全部音单
+            </view>
+        </view>
+        <view class="nav">
+            类型
+            <view class="nav-icon">
+            </view>
+        </view>
+    </view>
+    <view class="music-body">
+        <block wx:for="{{musics}}" wx:key="{{item.id}}">
+            <view class="music-item" bindtap="toAlbum" data-id="{{item.id}}">
+                <view class="music-img">
+                    <image src="{{item.front_cover}}" />
+                    <view class="count">
+                        <view class="count-icon">
+                        </view>
+                        {{item.music_count}}
+                    </view>
+                </view>
+                <view class="title">
+                    {{item.title}}
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="loadmore">
+        更多
+    </view>
+    <footer></footer>
+</view>

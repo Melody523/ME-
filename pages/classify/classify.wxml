@@ -1,0 +1,14 @@
+<!--pages/classify/classify.wxml-->
+<view class="classify-container">
+    <view class="classify-body">
+        <block wx:for="{{classify}}" wx:key="{{item.id}}">
+            <view class="classify-item" bindtap="toCatalogPage" data-id="{{item.id}}" data-type="{{item.title}}">
+                <image src="{{item.pic}}" />
+                <view class="classify-title">
+                    {{item.title}}
+                </view>
+            </view>
+        </block>
+    </view>
+    <footer></footer>
+</view>

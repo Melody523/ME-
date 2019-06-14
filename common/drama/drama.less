@@ -1,0 +1,135 @@
+.drama-container{
+    .drama-header{
+        position: relative;
+        height: 432rpx;
+        // background-image: url(https://static.missevan.com/dramacoversmini/201705/25/dd08a2fd4594542f6d3d32d9b920f85f080022.jpg);
+        filter: blur(20px);
+        left: -20px;
+        right: -20px;
+        top: -20px;
+        bottom: -20px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .drama-img{
+        z-index: 99;
+        position: absolute;
+        top: 128rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        image{
+            width: 368rpx;
+            height: 368rpx;
+            border: 4rpx solid #fff;
+            border-radius: 8rpx;
+        }
+        .count{
+            position: absolute;
+            left: 4rpx;
+            bottom: 16rpx;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            height: 50rpx;
+            width: 368rpx;
+            font-size: 24rpx;
+            background-image: linear-gradient(-180deg,transparent,rgba(0,0,0,.2) 55%,rgba(0,0,0,.28));
+            .count-icon{
+                height: 22rpx;
+                width: 28rpx;
+                background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.ee28a6bf.png);
+                background-position: -494rpx -246rpx;
+                background-size: 522rpx 470rpx;
+                margin: 0 10rpx;
+            }
+        }
+    }
+    .drama-info{
+        margin-top: 92rpx;
+        color: #757575;
+        font-size: 24rpx;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 124rpx;
+        align-items: center;
+    }
+    .drama-episode{
+        box-sizing: border-box;
+        padding: 20rpx 24rpx;
+        .episode-title{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10rpx;
+            .title-left{
+                height: 40rpx;
+                margin: 20rpx 0;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                .title-icon {
+                    height: 40rpx;
+                    background-color: #000;
+                    width: 8rpx;
+                    border-radius: 8rpx;
+                    margin-right: 20rpx;
+                }
+            }
+            .title-right{
+                font-size: 12px;
+                color: #757575;
+                display: flex;
+                align-items: center;
+                .nav-icon{
+                    height: 12rpx;
+                    width: 12rpx;
+                    transform: rotate(45deg);
+                    border-right: 1px solid #757575;
+                    border-top: 1px solid #757575;
+                }
+            }
+        }
+        .episode-list{
+            height: 56px;
+            width: 100%;
+            .episode-item{
+                display: inline-block;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #e0e0e0;
+                color: #616161;
+                font-size: 26rpx;
+                height: 112rpx;
+                line-height: 112rpx;
+                width: 212rpx;
+                border-radius: 8rpx;
+                margin-right: 20rpx;
+            }
+        }
+        .intro{
+            color: #616161;
+            font-size: 28rpx;
+        }
+    }
+    .drama-type{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 20rpx 24rpx;
+        .type-item{
+            height: 52rpx;
+            font-size: 24rpx;
+            background-color: #fff;
+            border-radius: 26rpx;
+            border: 1px solid #e0e0e0;
+            color: #616161;
+            line-height: 52rpx;
+            text-align: center;
+            padding: 0 20rpx;
+            margin-right: 20rpx;
+            margin-bottom: 10rpx;
+        }
+    }
+}

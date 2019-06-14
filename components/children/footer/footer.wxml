@@ -1,0 +1,16 @@
+<!--components/children/footer/footer.wxml-->
+<view class="footer">
+    <view class="footer-top">
+        <view class="footer-top-left">
+            客户端
+        </view>
+        <view class="footer-top-center">
+        </view>
+        <view class="footer-top-right">
+            返回顶部
+        </view>
+    </view>
+    <view class="footer-bottom">
+        MissEvan弹幕音频网 京ICP备:14055174号-1
+    </view>
+</view>

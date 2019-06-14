@@ -1,0 +1,97 @@
+.channel-container .channel-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 80rpx;
+  width: 100%;
+  z-index: 22;
+  line-height: 80rpx;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.channel-container .channel-nav {
+  margin-top: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 80rpx;
+}
+.channel-container .channel-nav .nav-item {
+  width: 148rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+.channel-container .channel-nav .active {
+  color: #c14a3f;
+  border-bottom: 2px solid #c14a3f;
+}
+.channel-container .channel-body {
+  padding: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.channel-container .channel-body .channel-item {
+  height: 300rpx;
+  width: 340rpx;
+}
+.channel-container .channel-body .channel-item .channel-img {
+  width: 100%;
+  height: 212rpx;
+  position: relative;
+}
+.channel-container .channel-body .channel-item .channel-img image {
+  width: 340rpx;
+  height: 212rpx;
+  border-radius: 8rpx;
+}
+.channel-container .channel-body .channel-item .channel-img .view-count {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2));
+  width: 160rpx;
+  padding: 0 10rpx;
+  text-align: right;
+  height: 40rpx;
+  padding-left: 36rpx;
+  color: #fff;
+  font-size: 12px;
+}
+.channel-container .channel-body .channel-item .channel-img .view-count .view-icon {
+  width: 30rpx;
+  height: 26rpx;
+  background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-thumbnails@2x.c71cb7b7.png);
+  background-position: -36rpx -52rpx;
+  background-size: 112rpx 110rpx;
+}
+.channel-container .channel-body .channel-item .channel-title {
+  margin-top: 6rpx;
+  width: 100%;
+  height: 80rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #616161;
+  font-size: 13px;
+}
+.channel-container .channel-body .loadmore {
+  width: 80%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 20rpx auto;
+  background-color: #e0e0e0;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6rpx;
+}

@@ -1,0 +1,27 @@
+<!--common/catalogs/catalogs.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="catalogs-container">
+    <view class="catalogs-header">
+        {{catalogsTitle}}
+    </view>
+    <scroll-view class="catalogs-nav" scroll-x="true" style="white-space: nowrap; width: 100%;">
+        <view class="{{chooseId==-1? 'nav-item active':'nav-item'}}" bindtap="changeId" data-id="-1">
+            全部动态
+        </view>
+        <block wx:for="{{catalogsNav}}" wx:key="{{item.id}}">
+            <view class="{{chooseId===item.id? 'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item.id}}">
+                {{item.catalog_name}}
+            </view>
+        </block>
+    </scroll-view>
+    
+    <view class="catalogs-body">
+    <scroll-view scroll-y="true" style="{{'height:'+setHeight+'rpx;'}}" scroll-into-view="{{toView}}">
+        <catalog catalogsList="{{catalogsList}}" id="index-1"></catalog>
+        <block wx:for="{{catalogsSon}}" wx:key="{{item.id}}">
+            <catalog catalogsList="{{item}}" id="{{item.nav}}"></catalog>
+        </block>
+        <footer></footer>
+    </scroll-view>
+    </view>
+</view>
