@@ -8,9 +8,74 @@
                 全部音单
             </view>
         </view>
-        <view class="nav">
+        <view class="nav" bindtap="translate">
             类型
             <view class="nav-icon">
+            </view>
+        </view>
+    </view>
+    <view class="mask" wx:if="{{showNav}}" bindtap="cancel">
+        
+    </view>
+    <view class="nav-wrapper" animation="{{animationData}}" catchtouchmove="ture">
+        <view class="nav-header">
+            <view class="nav-cancel" bindtap="cancel">
+                取消
+            </view>
+            <view class="nav-title">
+                类型选择
+            </view>
+        </view>
+        <view class="nav-all">
+            <view class="{{chooseId===0?'nav-all-title active':'nav-all-title'}}">
+                全部音单
+            </view>
+        </view>
+        <view class="nav-body">
+            <view class="nav-list">
+                <view class="nav-list-title">
+                    <view class="nav-title-icon">
+                        
+                    </view>
+                    情感
+                </view>
+                <view class="nav-list-body">
+                    <block wx:for="{{type_1}}" wx:key="{{item[0]}}">
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}">
+                            {{item[1]}}
+                        </view>
+                    </block> 
+                </view>
+            </view>
+            <view class="nav-list">
+                <view class="nav-list-title">
+                    <view class="nav-title-icon" style="background-position: -76rpx -216rpx;">
+                        
+                    </view>
+                    场景
+                </view>
+                <view class="nav-list-body">
+                    <block wx:for="{{type_2}}" wx:key="{{item[0]}}">
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}" >
+                            {{item[1]}}
+                        </view>
+                    </block> 
+                </view>
+            </view>
+            <view class="nav-list">
+                <view class="nav-list-title">
+                    <view class="nav-title-icon" style="background-position: 0rpx -216rpx;" >
+                        
+                    </view>
+                    主题
+                </view>
+                <view class="nav-list-body">
+                    <block wx:for="{{type_3}}" wx:key="{{item[0]}}">
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}">
+                            {{item[1]}}
+                        </view>
+                    </block> 
+                </view>
             </view>
         </view>
     </view>
@@ -35,4 +100,5 @@
         更多
     </view>
     <footer></footer>
+    <to-top floorstatus="{{floorstatus}}"></to-top>
 </view>

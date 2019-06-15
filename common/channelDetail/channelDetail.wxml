@@ -1,0 +1,107 @@
+<!--common/channelDetail/channelDetail.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="channelDetail-container">
+    <view class="channelDetail-header">
+        <view class="channelDetail-title">
+            {{channelInfo.name}}
+        </view>
+        <view class="channelDetail-info">
+            <view class="info-left">
+                {{channelInfo.sintro}}
+            </view>
+            <view class="info-right">
+                +关注
+            </view>
+        </view>
+    </view>
+    <view class="channelDetail-body">
+        <view class="divider">
+            <block wx:for="{{dividerList}}" wx:key="{{item.id}}">
+                <view class="divider-border" wx:if="{{item.id!=1}}">
+                </view>
+                <view class="{{chooseId===item.id?'divider-item active' : 'divider-item'}}" bindtap="changeId" data-id="{{item.id}}">
+                    {{item.title}}{{item.id==2?'('+channelInfo.comment_count+')':''}}
+                </view>
+            </block>   
+        </view>
+        <view class="channel-list" wx:if="{{chooseId===1}}">
+            <block wx:for="{{channelList}}" wx:key="{{item.id}}">
+                <view class="channel-item" bindtap="toSoundPage" data-id="{{item.id}}">
+                    <view class="channel-item-img">
+                        <image src="{{item.front_cover}}" />
+                    </view>
+                    <view class="channel-item-info">
+                        <view class="channel-item-title">
+                            <view class="recommend" wx:if="{{index<3}}">
+                            </view>
+                            <view class="title">
+                                {{item.soundstr}}
+                            </view>
+                        </view>
+                        <view class="channel-item-detail">
+                            <view class="play-times">
+                                <view class="play-icon">
+                                </view>
+                                {{item.view_count}}
+                            </view>
+                            <view class="duration">
+                                <view class="duration-icon">
+                                </view>
+                                {{filter.numToInt(item.duration/1000/60) + ':'+ filter.numToFix(item.duration/1000%60)}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>  
+        <view wx:if="{{chooseId===2}}" class="channel-comment">
+            <view class="comment-item" wx:for="{{commentList}}" wx:key="{{item.id}}">
+                <view class="comment-left">
+                    <image src="{{item.icon}}" />
+                </view>
+                <view class="comment-right">
+                    <view class="comment-info">
+                        <view class="comment-userInfo">
+                            <view class="comment-user">
+                                {{item.username}}
+                            </view>
+                            <view class="comment-time">
+                                {{item.ctime}}
+                            </view>
+                        </view>
+                        <view class="comment-like">
+                            <view class="like-icon">
+                                
+                            </view>
+                            {{item.like_num}}
+                        </view>
+                    </view>
+                    <view class="comment-desc">
+                        {{item.comment_content}}
+                    </view>
+                </view>
+            </view>
+        </view> 
+        <view wx:if="{{chooseId===3}}" class="channel-admin">
+            <view class="admin-title">
+                频道管理员({{adminList.length}})
+            </view>
+            <view class="admin-list">
+                <block wx:for="{{adminList}}" wx:key="{{item.id}}">
+                    <view class="admin-item">
+                        <view class="admin-img">
+                            <image src="{{item.avatar2}}" />
+                            <view class="img-icon">
+                            </view>
+                        </view>
+                        <view class="admin-username">
+                            {{item.username}}
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </view> 
+    </view>
+    <footer></footer>
+    <to-top floorstatus="{{floorstatus}}"></to-top>
+</view>

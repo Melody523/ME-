@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/classify/classify",
     "pages/music-list/music-list",
@@ -9,8 +8,8 @@
     "common/catalogs/catalogs",
     "common/sound/sound",
     "common/drama/drama",
+    "common/channelDetail/channelDetail",
     "common/channel/channel"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

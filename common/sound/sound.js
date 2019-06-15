@@ -37,7 +37,14 @@ Page({
     showNum: 4,
     isShow: false,
     play: false,
-    danmuList: []
+    danmuList: [],
+    floorstatus: false,
+    chooseId: 1,
+    commentList: [],
+    hasMore: true,
+    page:1,
+    id: 0,
+    imageList: []
   },
   // changeValue(e) {
   //   console.log('slider' + 'index' + '发生 change 事件，携带值为', e.detail.value)
@@ -97,6 +104,28 @@ Page({
       }
     })
   },
+  getCommentData(page, id){
+    request({
+      url: 'https://www.missevan.com/site/getcomment?&order=3&type=1&p='+page+'&eId='+id,
+      method: 'POST',
+      success: (res) => {
+        this.setData({
+          commentList: [...this.data.commentList, ...res.successVal.comment.Datas],
+          hasMore: res.successVal.comment.pagination.hasMore
+        })
+      }
+    })
+  },
+  getImage(id) {
+    request({
+      url: 'https://www.missevan.com/sound/getSortedImage?soundid='+id,
+      success: (res) => {
+        this.setData({
+          imageList: res.info || []
+        })
+      }
+    })
+  },
   toDramaPage(e) {
     let id  = e.currentTarget.dataset.id;
     wx.navigateTo({
@@ -109,11 +138,18 @@ Page({
       url: '../sound/sound?id='+id
     })
   },
-  getAudio(e) {
-    
+  onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
   },
   changePlay(e){
-    
     this.setData({
       play: !this.data.play
     })
@@ -121,18 +157,16 @@ Page({
       // console.log(this.data.play)
       this.innerAudioContext.autoplay = true
       this.innerAudioContext.src = 'https://static.missevan.com/'+ e.currentTarget.dataset.url
-      
       if(!this.data.play){
-        console.log(this.data.play)
         this.innerAudioContext.pause(() => {
-          console.log('暂停')
+          // console.log('暂停')
         })
       } else{
         this.innerAudioContext.play(() => {
-          console.log('开始')
+          // console.log('开始')
         })
         this.innerAudioContext.onPlay(() => {
-          console.log('开始播放')
+          // console.log('开始播放')
         })
       }
       
@@ -142,14 +176,23 @@ Page({
       // })
     }
   },
+  changeId(e){
+    let id  = e.currentTarget.dataset.id;
+    this.setData({
+      chooseId: id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      controlList: sounds
+      controlList: sounds,
+      id: options.id
     })
     this.getSound(options.id);
+    this.getCommentData(this.data.page, options.id);
+    this.getImage(options.id);
   },
 
   /**
@@ -193,7 +236,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.hasMore&&this.data.chooseId===2) {
+      let page = this.data.page++;
+      this.getCommentData(page, this.data.id);
+    } 
   },
 
   /**

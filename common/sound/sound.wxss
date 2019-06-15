@@ -42,6 +42,14 @@
   height: 56rpx;
   z-index: 5;
 }
+.sound-container .sound-header .play .onplay {
+  background-position: -150rpx -60rpx;
+  width: 56rpx;
+  height: 56rpx;
+  z-index: 5;
+  background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-sound@2x.0f86e6b7.png);
+  background-size: 240rpx 204rpx;
+}
 .sound-container .btn-area {
   width: 100%;
   height: 112rpx;
@@ -410,4 +418,79 @@
 }
 .sound-container .sound-body .sound-related .sound-sounds .sounds-list .sounds-item .count .comment .comment-icon {
   background-position: -88rpx -54rpx;
+}
+.sound-container .sound-body .channel-comment {
+  padding: 24rpx;
+  padding: 20rpx;
+}
+.sound-container .sound-body .channel-comment .comment-item {
+  display: flex;
+  margin: 24rpx 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-left {
+  width: 124rpx;
+  display: flex;
+  justify-content: center;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-left image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6rpx 0 24rpx;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-info {
+  display: flex;
+  justify-content: space-between;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-info .comment-userInfo .comment-user {
+  color: #757575;
+  font-size: 24rpx;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-info .comment-userInfo .comment-time {
+  font-size: 22rpx;
+  color: #b3b3b3;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-info .comment-like {
+  display: flex;
+  align-items: center;
+  margin-right: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-left: 20rpx;
+  font-size: 22rpx;
+  color: #757575;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-info .comment-like .like-icon {
+  width: 32rpx;
+  height: 32rpx;
+  background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.ee28a6bf.png);
+  background-position: -188rpx -148rpx;
+  background-size: 522rpx 470rpx;
+  margin-right: 10rpx;
+}
+.sound-container .sound-body .channel-comment .comment-item .comment-right .comment-desc {
+  padding-top: 12rpx;
+  font-size: 24rpx;
+  word-break: break-all;
+}
+.sound-container .sound-body .sounds-image {
+  height: 600rpx;
+  padding: 20rpx 0;
+}
+.sound-container .sound-body .sounds-image .image-list {
+  display: flex;
+  justify-content: flex-start;
+}
+.sound-container .sound-body .sounds-image .image-list image {
+  border-radius: 8rpx;
+  width: 204rpx;
+  height: 204rpx;
+  margin: 10rpx;
 }

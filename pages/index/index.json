@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "top-group-list": "../../components/top-group-list/top-group-list",
-    "footer": "../../components/children/footer/footer"
+    "footer": "../../components/children/footer/footer",
+    "to-top": "../../components/children/to-top/to-top"
   }
 }

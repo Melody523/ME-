@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    rankList: []
+    rankList: [],
+    floorstatus: false
   },
   getRank() {
     request({
@@ -24,6 +25,17 @@ Page({
     wx.navigateTo({
       url: url
     })
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载

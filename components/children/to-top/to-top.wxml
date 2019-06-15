@@ -1,0 +1,4 @@
+<!--components/children/to-top/to-top.wxml-->
+<view class="totop-container" hidden='{{!floorstatus}}' bindtap="goTop">
+    <image src="../../../images/icons/totop.png" />
+</view>

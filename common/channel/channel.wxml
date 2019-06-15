@@ -12,7 +12,7 @@
     </view>
     <view class="channel-body">
         <block wx:for="{{channelList}}" wx:key="{{item.id}}">
-            <view class="channel-item">
+            <view class="channel-item" bindtap="toChannelDetail" data-id="{{item.id}}">
                 <view class="channel-img">
                     <image src="{{item.smallpic}}" />
                     <view class="view-count">
@@ -31,4 +31,5 @@
         </view>
     </view>
     <footer></footer>
+    <to-top floorstatus="{{floorstatus}}"></to-top>
 </view>

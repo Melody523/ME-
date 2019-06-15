@@ -44,7 +44,7 @@
     </view>
     <view class="panel-body" wx:if="{{panelType[datasType].type==='special'}}">
         <block wx:for="{{datas}}" wx:key="{{item.id}}">
-            <view class="channel-item" wx:if="{{index<4}}" >
+            <view class="channel-item" wx:if="{{index<4}}" bindtap="toChannelDetail" data-id="{{item.id}}">
                 <image src="{{item.smallpic}}" />
                 <view class="name">
                     {{item.name}}

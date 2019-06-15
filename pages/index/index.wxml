@@ -2,4 +2,5 @@
 <view>
   <top-group-list></top-group-list>
   <footer></footer>
+  <to-top floorstatus="{{floorstatus}}"></to-top>
 </view>

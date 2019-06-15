@@ -43,6 +43,14 @@
                 height: 56rpx;
                 z-index: 5;
             }
+            .onplay{
+                background-position: -150rpx -60rpx;
+                width: 56rpx;
+                height: 56rpx;
+                z-index: 5;
+                background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons-sound@2x.0f86e6b7.png);
+                background-size: 240rpx 204rpx;
+            }
         }
     }
     .btn-area{
@@ -420,6 +428,83 @@
                     }
                 }
                 
+            }
+        }
+        .channel-comment{
+            padding: 24rpx;
+            padding: 20rpx;
+            .comment-item{
+                display: flex;
+                margin: 24rpx 0;
+                border-bottom: 1px solid #e0e0e0;
+                .comment-left{
+                    width: 124rpx;
+                    display: flex;
+                    justify-content: center;
+                    image{
+                        width: 80rpx;
+                        height: 80rpx;
+                        border-radius: 50%;
+                    }
+                }
+                .comment-right{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 6rpx 0 24rpx;
+                    .comment-info{
+                        display: flex;
+                        justify-content: space-between;
+                        .comment-userInfo{
+                            .comment-user{
+                                color: #757575;
+                                font-size: 24rpx;
+                            }
+                            .comment-time{
+                                font-size: 22rpx;
+                                color: #b3b3b3;
+                            }
+                        }
+                        .comment-like{
+                            display: flex;
+                            align-items: center;
+                            margin-right: 10rpx;
+                            height: 32rpx;
+                            line-height: 32rpx;
+                            padding-left: 20rpx;
+                            font-size: 22rpx;
+                            color: #757575;
+                            .like-icon{
+                                width: 32rpx;
+                                height: 32rpx;
+                                background-image: url(https://static.missevan.com/assets/m/images/build/sprite-icons@2x.ee28a6bf.png);
+                                background-position: -188rpx -148rpx;
+                                background-size: 522rpx 470rpx;
+                                margin-right: 10rpx;
+                            }
+                        }
+                    }
+                    .comment-desc{
+                        padding-top: 12rpx;
+                        font-size: 24rpx;
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+        .sounds-image{
+            height: 600rpx;
+            padding: 20rpx 0;
+            .image-list{
+                display: flex;
+                justify-content: flex-start;
+                image{
+                    border-radius: 8rpx;
+                    width: 204rpx;
+                    height: 204rpx;
+                    margin: 10rpx;
+                }
             }
         }
     }

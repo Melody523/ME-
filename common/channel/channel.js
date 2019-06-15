@@ -12,7 +12,8 @@ Page({
       {id: 2, title: '铃声'}
     ],
     chooseId: 0,
-    channelList: []
+    channelList: [],
+    floorstatus: false
   },
   changeType(e) {
     this.setData({
@@ -31,7 +32,23 @@ Page({
       }
     })
   },
-
+  toChannelDetail(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../../common/channelDetail/channelDetail'+'?id='+id
+    })
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

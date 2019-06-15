@@ -63,4 +63,5 @@
         </block>
     </view>
     <footer></footer>
+    <to-top floorstatus="{{floorstatus}}"></to-top>
 </view>

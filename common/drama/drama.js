@@ -7,7 +7,8 @@ Page({
    */
   data: {
     dramaInfo: {},
-    episodeList: []
+    episodeList: [],
+    floorstatus: false
   },
   getDramaData(id) {
     request({
@@ -19,6 +20,17 @@ Page({
         })
       }
     })
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载

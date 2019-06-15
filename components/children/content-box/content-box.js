@@ -38,6 +38,12 @@ Component({
       wx.navigateTo({
         url: '../../common/sound/sound'+'?id='+id
       })
+    },
+    toChannelDetail(e) {
+      let id = e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '../../common/channelDetail/channelDetail'+'?id='+id
+      })
     }
   }
 })
