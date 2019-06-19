@@ -12,7 +12,7 @@ const request = ({
         })
     }
     wx.request({
-        url: url, //仅为示例，并非真实的接口地址
+        url: url, 
         dataType: 'json',
         method: method,
         header: {
@@ -22,7 +22,6 @@ const request = ({
             if (res.data.status === 'fail') {
                 wx.showToast({
                     title: '数据请求失败,请稍后重试...',
-                    image: '../images/icons/fail.png',
                     duration: 2000
                 });
                 toast = false;
@@ -33,7 +32,6 @@ const request = ({
         fail(error) {
             wx.showToast({
                 title: '数据请求失败,请稍后重试...',
-                image: '../images/icons/fail.png',
                 duration: 2000
             })
             toast = false;

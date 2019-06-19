@@ -5,7 +5,7 @@
             <view class="title-icon">
             </view>
             <view class="name">
-                全部音单
+                {{chooseType}}
             </view>
         </view>
         <view class="nav" bindtap="translate">
@@ -27,7 +27,7 @@
             </view>
         </view>
         <view class="nav-all">
-            <view class="{{chooseId===0?'nav-all-title active':'nav-all-title'}}">
+            <view class="{{chooseId===0?'nav-all-title active':'nav-all-title'}}" bindtap="changeId" data-id="{{0}}" data-type="{{'全部音单'}}">
                 全部音单
             </view>
         </view>
@@ -41,7 +41,7 @@
                 </view>
                 <view class="nav-list-body">
                     <block wx:for="{{type_1}}" wx:key="{{item[0]}}">
-                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}">
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}" data-type="{{item[1]}}">
                             {{item[1]}}
                         </view>
                     </block> 
@@ -56,7 +56,7 @@
                 </view>
                 <view class="nav-list-body">
                     <block wx:for="{{type_2}}" wx:key="{{item[0]}}">
-                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}" >
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}" data-type="{{item[1]}}">
                             {{item[1]}}
                         </view>
                     </block> 
@@ -71,7 +71,7 @@
                 </view>
                 <view class="nav-list-body">
                     <block wx:for="{{type_3}}" wx:key="{{item[0]}}">
-                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}">
+                        <view class="{{chooseId==item[0]?'nav-item active':'nav-item'}}" bindtap="changeId" data-id="{{item[0]}}" data-type="{{item[1]}}">
                             {{item[1]}}
                         </view>
                     </block> 

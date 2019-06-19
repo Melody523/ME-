@@ -14,7 +14,8 @@ Page({
     chooseId: 0,
     animationData: {},
     width: 0,
-    showNav: false
+    showNav: false,
+    chooseType: '全部音单'
   },
   getMusics(id) {
     let url = id==0?'https://www.missevan.com/explore/tagalbum?order=0':'https://www.missevan.com/explore/tagalbum?order=0&tid='+id
@@ -58,9 +59,10 @@ Page({
   },
   changeId(e) {
     let id  = e.currentTarget.dataset.id;
-    
+    let type  = e.currentTarget.dataset.type;
     this.setData({
-      chooseId: id
+      chooseId: id,
+      chooseType: type
     })
     this.getMusics(id);
     this.animation.translate(this.data.width*0.9, 0).step({ duration: 500 })
@@ -83,19 +85,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.animation = wx.createAnimation()
+    // this.animation = wx.createAnimation()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var animation = wx.createAnimation({
+    this.animation = wx.createAnimation({
       duration: 300,
       timingFunction: 'ease',
     })
 
-    this.animation = animation
+    // this.animation = animation
   },
   getWidth() {
     wx.getSystemInfo({

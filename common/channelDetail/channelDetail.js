@@ -142,7 +142,6 @@ Page({
       let page = this.data.page++;
       this.getCommentData(page, this.data.id);
     } 
-    
   },
 
   /**
