@@ -26,9 +26,11 @@
 * 排行榜详情，点击音乐可跳转音乐详情页
 <img src="https://github.com/Melody523/ME-/blob/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE/rank-list.jpg" width="200">
 
-* 频道页，点击tab可以获取不同类型的频道，点解频道进入频道列表页
+* 频道页，点击tab可以获取不同类型的频道，点击频道进入频道列表页
 <img src="https://github.com/Melody523/ME-/blob/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE/channel.jpg" width="200">
 
 * 频道列表页，点击具体项，跳转音乐详情页
 <img src="https://github.com/Melody523/ME-/blob/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE/channel-list.jpg" width="200">
 
+* 主题细分，类型导航可左右滑动，点击可滚动到对应位置
+<img src="https://github.com/Melody523/ME-/blob/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE/catalogs.jpg" width="200">
