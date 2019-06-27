@@ -14,6 +14,19 @@ onPageScroll(e) {
     }
 }
 ```
+```
+goTop() { 
+    if (wx.pageScrollTo) {
+        wx.pageScrollTo({
+          scrollTop: 0
+        })
+    } else {
+    wx.showModal({
+      title: '提示',
+      content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+    })
+}
+```
 
 2. 与服务端进行数据交互生命周期函数`onLoad`--监听页面加载;对`request`进行封装
 ```
