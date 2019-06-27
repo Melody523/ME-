@@ -1,6 +1,19 @@
 # ME小程序开发
 ## 项目技术点总结
 1. 实现返回顶部主要利用`onpageScroll`监测屏幕的位置，`e.scrollTop`监听页面在垂直方向已滚动的距离来判断返回顶部按钮是否显示;
+```
+onPageScroll(e) {
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
+}
+```
 
 2. 与服务端进行数据交互生命周期函数`onLoad`--监听页面加载;对`request`进行封装
 ```
